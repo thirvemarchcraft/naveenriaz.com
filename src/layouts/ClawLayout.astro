@@ -1,0 +1,335 @@
+---
+import Base from "./Base.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import OuroborosFooter from "../components/OuroborosFooter.astro";
+
+interface Props {
+  title: string;
+  grip: string;
+  release: string;
+  resonance: string;
+  date: Date;
+  born_from_literature?: string;
+  friction?: string;
+  misread?: string;
+  cost?: string;
+  residue?: string;
+}
+
+const {
+  title,
+  grip,
+  release,
+  resonance,
+  date,
+  born_from_literature,
+  friction,
+  misread,
+  cost,
+  residue,
+} = Astro.props;
+
+const formattedDate = date.toLocaleDateString("en-GB", {
+  day: "numeric",
+  month: "long",
+  year: "numeric",
+});
+
+const hasTruthFields = friction || misread || cost || residue;
+---
+
+<Base title={`${title} | Claws`} description={grip}>
+  <Header activeNav="claws" />
+  <main class="claw-page">
+    <article class="container container--narrow">
+
+      <!-- Header -->
+      <header class="claw-header animate-in">
+        <div class="claw-meta">
+          <span class="claw-badge">🦞 CLAW</span>
+          <span class="claw-date">{formattedDate}</span>
+        </div>
+        <h1>{title}</h1>
+        <blockquote class="claw-grip">
+          <span class="grip-label">THE GRIP</span>
+          {grip}
+        </blockquote>
+      </header>
+
+      <!-- Body -->
+      <section class="claw-body animate-in animate-delay-1">
+        <slot />
+      </section>
+
+      <!-- Release + Resonance -->
+      <section class="claw-release-section animate-in animate-delay-2">
+        <div class="claw-release">
+          <span class="section-label">THE RELEASE</span>
+          <p>{release}</p>
+        </div>
+        <div class="claw-resonance">
+          <span class="section-label">THE RESONANCE</span>
+          <p>{resonance}</p>
+        </div>
+      </section>
+
+      <!-- Truth Fields -->
+      {hasTruthFields && (
+        <aside class="claw-truth animate-in animate-delay-2">
+          <span class="section-label">TRUTH FIELDS</span>
+          <dl class="truth-grid">
+            {friction && (
+              <>
+                <dt>Friction</dt>
+                <dd>{friction}</dd>
+              </>
+            )}
+            {misread && (
+              <>
+                <dt>Misread</dt>
+                <dd>{misread}</dd>
+              </>
+            )}
+            {cost && (
+              <>
+                <dt>Cost</dt>
+                <dd>{cost}</dd>
+              </>
+            )}
+            {residue && (
+              <>
+                <dt>Residue</dt>
+                <dd>{residue}</dd>
+              </>
+            )}
+          </dl>
+        </aside>
+      )}
+
+      <!-- Literature Source -->
+      {born_from_literature && (
+        <div class="claw-source animate-in animate-delay-2">
+          <span class="source-label">BORN FROM</span>
+          <span class="source-text">{born_from_literature}</span>
+        </div>
+      )}
+
+      <!-- Navigation -->
+      <nav class="claw-nav">
+        <a href="/claws/" class="btn">← All Claws</a>
+      </nav>
+
+      <OuroborosFooter collection="claws" slug={Astro.params.slug as string || Astro.url.pathname.replace(/\/$/, '').split('/').pop() || ''} />
+    </article>
+  </main>
+  <Footer />
+</Base>
+
+<style>
+  .claw-page {
+    padding: var(--space-3xl) 0;
+  }
+
+  /* Header */
+  .claw-header {
+    text-align: center;
+    margin-bottom: var(--space-2xl);
+  }
+
+  .claw-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--space-lg);
+  }
+
+  .claw-badge {
+    font-family: var(--font-label);
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--soul-color);
+  }
+
+  .claw-date {
+    font-family: var(--font-label);
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    color: var(--text-muted);
+    opacity: 0.6;
+  }
+
+  .claw-header h1 {
+    font-size: clamp(1.8rem, 4.5vw, 2.5rem);
+    color: var(--text-primary) !important;
+    margin-bottom: var(--space-lg);
+    line-height: 1.2;
+  }
+
+  .claw-grip {
+    font-size: 1rem;
+    font-style: italic;
+    color: var(--text-secondary);
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+    opacity: 0.85;
+    border-left: 3px solid var(--soul-color);
+    padding-left: var(--space-md);
+    text-align: left;
+  }
+
+  .grip-label {
+    display: block;
+    font-family: var(--font-label);
+    font-size: 0.55rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    color: var(--soul-color);
+    opacity: 0.7;
+    margin-bottom: var(--space-xs);
+    font-style: normal;
+  }
+
+  /* Body */
+  .claw-body {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .claw-body :global(p) {
+    font-size: 1.08rem;
+    line-height: 1.85;
+    margin-bottom: var(--space-lg);
+  }
+
+  .claw-body :global(strong) {
+    color: var(--text-primary);
+  }
+
+  .claw-body :global(blockquote) {
+    border-left: 3px solid var(--soul-color);
+    padding-left: var(--space-md);
+    margin: var(--space-xl) 0;
+    font-style: italic;
+    color: var(--text-secondary);
+  }
+
+  /* Release + Resonance */
+  .claw-release-section {
+    max-width: 600px;
+    margin: var(--space-2xl) auto 0;
+    padding-top: var(--space-xl);
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xl);
+  }
+
+  .section-label {
+    display: block;
+    font-family: var(--font-label);
+    font-size: 0.6rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    color: var(--text-muted);
+    opacity: 0.5;
+    margin-bottom: var(--space-sm);
+  }
+
+  .claw-release p,
+  .claw-resonance p {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    line-height: 1.7;
+    margin: 0;
+  }
+
+  /* Truth Fields */
+  .claw-truth {
+    max-width: 600px;
+    margin: var(--space-xl) auto 0;
+    padding: var(--space-lg);
+    border-radius: var(--border-radius);
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.04);
+  }
+
+  .truth-grid {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: var(--space-xs) var(--space-md);
+    margin: 0;
+  }
+
+  .truth-grid dt {
+    font-family: var(--font-label);
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    color: var(--soul-color);
+    opacity: 0.6;
+    text-transform: uppercase;
+    padding-top: 2px;
+  }
+
+  .truth-grid dd {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
+    margin: 0;
+    opacity: 0.7;
+  }
+
+  /* Source */
+  .claw-source {
+    text-align: center;
+    margin-top: var(--space-xl);
+    padding-top: var(--space-lg);
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+  }
+
+  .source-label {
+    font-family: var(--font-label);
+    font-size: 0.6rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    color: var(--text-muted);
+    opacity: 0.4;
+    display: block;
+    margin-bottom: var(--space-xs);
+  }
+
+  .source-text {
+    font-size: 0.82rem;
+    color: var(--soul-color);
+    opacity: 0.7;
+  }
+
+  /* Navigation */
+  .claw-nav {
+    display: flex;
+    justify-content: center;
+    margin-top: var(--space-2xl);
+    padding-top: var(--space-xl);
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .claw-meta {
+      flex-direction: column;
+      gap: var(--space-xs);
+    }
+
+    .truth-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .truth-grid dt {
+      margin-top: var(--space-sm);
+    }
+  }
+</style>

@@ -1,0 +1,31 @@
+---
+import { getCollection, render } from 'astro:content';
+import ClawLayout from '../../layouts/ClawLayout.astro';
+
+export async function getStaticPaths() {
+  const claws = await getCollection('claws');
+  return claws.map((claw) => ({
+    params: { slug: claw.id },
+    props: { claw },
+  }));
+}
+
+const { claw } = Astro.props;
+const { Content } = await render(claw);
+const d = claw.data;
+---
+
+<ClawLayout
+  title={d.title}
+  grip={d.grip}
+  release={d.release}
+  resonance={d.resonance}
+  date={d.date}
+  born_from_literature={d.born_from_literature}
+  friction={d.friction}
+  misread={d.misread}
+  cost={d.cost}
+  residue={d.residue}
+>
+  <Content />
+</ClawLayout>
