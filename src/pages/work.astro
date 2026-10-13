@@ -217,79 +217,134 @@ import { getCollection } from "astro:content";
           </a>
         </div>
 
-        <h3 class="subsection-heading">Published Ebooks</h3>
-        <div class="ebook-grid">
-          <div class="work-item work-item--compact">
-            <h4>PIC Your Profile</h4>
-            <p class="work-type">Published</p>
-            <p>Identity architecture ebook.</p>
+        <div id="the-sovereign-march" style="margin-top: var(--space-xl); padding: var(--space-xl); border: 1px solid rgba(255, 215, 0, 0.3); background: rgba(255, 215, 0, 0.02); border-radius: var(--radius-lg);">
+          <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: var(--space-sm);">
+            <div style="display: flex; align-items: center; gap: 8px;">
+              <span class="glow-dot" style="color: var(--color-gold, #ffd700);"></span>
+              <span class="knots-badge" style="color: var(--color-gold, #ffd700); margin: 0; letter-spacing: 0.15em;">PUBLISHED BOOK · DIMENSION I: SELF</span>
+            </div>
+            <span style="font-size: 0.8rem; color: var(--text-muted); font-family: var(--font-label);">16 TERRITORIES</span>
           </div>
-          <div class="work-item work-item--compact">
+
+          <h3 style="font-size: 1.8rem; color: var(--text-primary); margin-bottom: var(--space-xs); font-weight: 700;">The Sovereign March</h3>
+          <p class="work-type" style="color: var(--color-gold, #ffd700); font-size: 0.9rem; margin-bottom: var(--space-md);">Dimension I: Self · The Internal Architecture of Sovereign Governance</p>
+          
+          <p style="line-height: 1.7; color: var(--text-secondary); margin-bottom: var(--space-lg);">
+            Organisations, products, and leaders decay when they confuse brute control with sovereignty. 
+            <em>The Sovereign March</em> lays down the sixteen foundational territories of self-governance: how a living human cultivates internal authority, discipline without violence, and self-command before entering the external arena.
+          </p>
+
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: var(--space-md); margin-top: var(--space-md); font-size: 0.88rem;">
+            <div style="background: rgba(255, 255, 255, 0.03); padding: var(--space-md); border-radius: var(--radius-sm); border-left: 2px solid var(--mind-color);">
+              <strong style="display: block; color: var(--mind-color); margin-bottom: 6px; font-size: 0.8rem; letter-spacing: 0.1em; text-transform: uppercase;">Part 1: The Map</strong>
+              <p style="color: var(--text-muted); margin: 0; line-height: 1.5;">
+                1. The Sovereign Self<br />
+                2. The Unled Self<br />
+                3. Sovereignty Is Not Control<br />
+                4. The Divided Self
+              </p>
+            </div>
+
+            <div style="background: rgba(255, 255, 255, 0.03); padding: var(--space-md); border-radius: var(--radius-sm); border-left: 2px solid var(--soul-color);">
+              <strong style="display: block; color: var(--soul-color); margin-bottom: 6px; font-size: 0.8rem; letter-spacing: 0.1em; text-transform: uppercase;">Part 2: The Instrument</strong>
+              <p style="color: var(--text-muted); margin: 0; line-height: 1.5;">
+                5. Soul<br />
+                6. Mind<br />
+                7. Body
+              </p>
+            </div>
+
+            <div style="background: rgba(255, 255, 255, 0.03); padding: var(--space-md); border-radius: var(--radius-sm); border-left: 2px solid var(--body-color);">
+              <strong style="display: block; color: var(--body-color); margin-bottom: 6px; font-size: 0.8rem; letter-spacing: 0.1em; text-transform: uppercase;">Part 3: The Architecture</strong>
+              <p style="color: var(--text-muted); margin: 0; line-height: 1.5;">
+                8. Movement<br />
+                9. Awareness<br />
+                10. Reasoning<br />
+                11. Contribution<br />
+                12. Healing
+              </p>
+            </div>
+
+            <div style="background: rgba(255, 255, 255, 0.03); padding: var(--space-md); border-radius: var(--radius-sm); border-left: 2px solid var(--color-gold, #ffd700);">
+              <strong style="display: block; color: var(--color-gold, #ffd700); margin-bottom: 6px; font-size: 0.8rem; letter-spacing: 0.1em; text-transform: uppercase;">Part 4: The Practice</strong>
+              <p style="color: var(--text-muted); margin: 0; line-height: 1.5;">
+                13. The Sovereign Decision<br />
+                14. Boundaries<br />
+                15. Discipline Without Violence<br />
+                16. The Daily March
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <h3 class="subsection-heading" style="margin-top: var(--space-2xl);">Codices & Research Frameworks</h3>
+        <div class="shipped-grid">
+          <div class="shipped-card">
+            <h4>Let's SPAR: Disagree to Agree</h4>
+            <p class="work-type" style="color: var(--text-muted); font-size: 0.75rem; margin-bottom: 4px;">Dialectic Codex · 33 Chapters</p>
+            <p>
+              The upstream dialectic foundation. How to argue with yourself productively through structured friction and multi-agent sparring.
+            </p>
+          </div>
+
+          <div class="shipped-card">
+            <h4>Build Your Own Sovereignty</h4>
+            <p class="work-type" style="color: var(--text-muted); font-size: 0.75rem; margin-bottom: 4px;">IRAIMAI Architecture · 75 Territories</p>
+            <p>
+              The submerged living architecture scaling sovereignty from the individual soul across teams, systems, and institutional bodies.
+            </p>
+          </div>
+
+          <div class="shipped-card">
+            <h4>PIC Your Profile</h4>
+            <p class="work-type" style="color: var(--text-muted); font-size: 0.75rem; margin-bottom: 4px;">Codex · Completed</p>
+            <p>
+              Identity architecture and cognitive profiling: uncovering the calling, origin, and endurance beneath social masks.
+            </p>
+          </div>
+
+          <div class="shipped-card">
             <h4>21-Rep AI Gym</h4>
-            <p class="work-type">Published</p>
-            <p>AI capability building through structured reps.</p>
+            <p class="work-type" style="color: var(--text-muted); font-size: 0.75rem; margin-bottom: 4px;">Codex · Completed</p>
+            <p>
+              Cognitive capability building: structured repetitions for developing genuine AI fluency, negative constraints, and taste.
+            </p>
           </div>
         </div>
       </section>
 
       <div class="divider"><img src="/logo-h.svg" alt="ஃ" /></div>
 
-      <!-- Mind: Cooking -->
+      <!-- Mind: Research Pipeline -->
       <section class="section--tight">
         <div class="layer-header">
           <span class="glow-dot" style="color: var(--body-color);"></span>
-          <h2>Recipes <span class="layer-label">Cooking</span></h2>
+          <h2>Living Research <span class="layer-label">In Motion</span></h2>
         </div>
 
-        <div class="work-grid">
-          <div class="work-item">
-            <h3>Let's SPAR: Disagree to Agree</h3>
-            <p class="work-type">Book · 33 Chapters · Publication-Ready</p>
-            <p>
-              How to argue with yourself productively. Structured dialectic
-              thinking for better decisions, built on the SPAR protocol.
-            </p>
-          </div>
-
-          <div class="work-item">
-            <h3>Thirukkural: Mind, Body, Soul</h3>
-            <p class="work-type">Book · In Active Writing</p>
-            <p>
-              Bridging 2000-year-old Tamil wisdom to modern leadership through
-              the Mind-Body-Soul lens.
-            </p>
-          </div>
-        </div>
-
-        <div class="ebook-grid">
-          <div class="work-item work-item--compact">
-            <h4>SPAR Gracefully</h4>
-            <p class="work-type">Ebook · Cooking</p>
-            <p>SPAR methodology in practice.</p>
-          </div>
-          <div class="work-item work-item--compact">
-            <h4>PURGE Your Clarity</h4>
-            <p class="work-type">Ebook · Cooking</p>
-            <p>Clarity through structured emergence.</p>
-          </div>
-        </div>
-
-        <div class="cooking-repos">
-          <p class="cooking-label">Also cooking on GitHub:</p>
+        <div class="cooking-repos" style="margin-top: var(--space-md);">
+          <p class="cooking-label">Open specifications and repositories in motion:</p>
           <ul>
             <li>
               <a
                 href="https://github.com/synthanai/intent-of-thought-lifecycle"
                 target="_blank"
                 rel="noopener">Intent of Thought Lifecycle</a
-              > : Extending the IoT paper into a living protocol
+              > : Extending the IoT paper into a living cognitive protocol
+            </li>
+            <li>
+              <a
+                href="https://github.com/synthanai/kural"
+                target="_blank"
+                rel="noopener">Kural Kit</a
+              > : Coupling 1330 Tamil couplets into computational decision moments
             </li>
             <li>
               <a
                 href="https://github.com/synthanai/student-kit"
                 target="_blank"
                 rel="noopener">Student-Kit</a
-              > : AI toolkit for students
+              > : Open intelligence capture toolkit for autonomous learners
             </li>
           </ul>
         </div>
