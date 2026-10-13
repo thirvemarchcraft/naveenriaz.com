@@ -294,7 +294,7 @@ async function scanMoments() {
         try {
             const entries = await readdir(dir, { withFileTypes: true, recursive: true });
             for (const entry of entries) {
-                if (entry.isFile() && entry.name.endsWith('.md') && entry.name !== 'placeholder.md') {
+                if (entry.isFile() && entry.name.endsWith('.md') && !entry.name.startsWith('_') && entry.name !== 'placeholder.md') {
                     count++;
                 }
             }

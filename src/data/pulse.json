@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-13T11:04:27.337Z",
+  "generatedAt": "2026-10-13T12:31:27.893Z",
   "pulse": {
     "repos": 42,
     "researchFiles": 21099,
@@ -10,53 +10,53 @@
     "skills": 34,
     "knowledgeItems": 22,
     "publications": 9,
-    "totalCommits": 5398,
-    "lastActivity": "2026-10-13T21:55:03+11:00"
+    "totalCommits": 5411,
+    "lastActivity": "2026-10-13T23:24:56+11:00"
   },
   "content": {
     "moments": {
       "sparks": {
-        "count": 59,
+        "count": 53,
         "dimension": "Think",
         "length": "Short"
       },
       "fusions": {
-        "count": 45,
+        "count": 43,
         "dimension": "Think",
         "length": "Long"
       },
       "claws": {
-        "count": 6,
+        "count": 5,
         "dimension": "Think",
         "length": "Long"
       },
       "knots": {
-        "count": 168,
+        "count": 108,
         "dimension": "Work",
         "length": "Short"
       },
       "beads": {
-        "count": 14,
+        "count": 13,
         "dimension": "Play",
         "length": "Long"
       },
       "digs": {
-        "count": 1,
+        "count": 0,
         "dimension": "Work",
         "length": "Long"
       },
       "wows": {
-        "count": 1,
+        "count": 0,
         "dimension": "Play",
         "length": "Short"
       },
       "awes": {
-        "count": 1,
+        "count": 0,
         "dimension": "Play",
         "length": "Long"
       },
       "scars": {
-        "count": 1,
+        "count": 0,
         "dimension": "Play",
         "length": "Short"
       },
@@ -66,20 +66,20 @@
         "length": "Short"
       },
       "spars": {
-        "count": 1,
+        "count": 0,
         "dimension": "Vibe",
         "length": "Long"
       },
       "voids": {
-        "count": 1,
+        "count": 0,
         "dimension": "Vibe",
         "length": "Short"
       }
     },
-    "totalContent": 299,
-    "filledTypes": 12,
+    "totalContent": 223,
+    "filledTypes": 6,
     "totalTypes": 12,
-    "healthPct": 100
+    "healthPct": 50
   },
   "ki": [
     {
